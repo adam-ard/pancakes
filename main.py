@@ -37,7 +37,7 @@ def main():
         tests = f.read()
 
     for i, test in enumerate(tests.split()):
-        print('Case #%s: %s' % (i+1, n_flips(test)))
+        print('Case #%d: %d' % (i+1, n_flips(test)))
 
 
 if __name__ == "__main__":
