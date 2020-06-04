@@ -8,6 +8,7 @@ import (
 )
 
 func nFlips(s string) int {
+	// handle base case, single letter strings
 	if len(s) == 1 {
 		if s[0] == '-' {
 			return 1
@@ -16,6 +17,7 @@ func nFlips(s string) int {
 		}
 	}
 
+	// count the flips
 	count := 0
 	for i := 0; i < len(s)-1; i++ {
 		if s[i] != s[i+1] {
@@ -23,6 +25,7 @@ func nFlips(s string) int {
 		}
 	}
 
+	// check if last one is a flip
 	if s[len(s)-1] == '-' {
 		count++
 	}
