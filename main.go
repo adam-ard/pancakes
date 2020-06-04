@@ -7,6 +7,26 @@ import (
 	"strings"
 )
 
+// While simpler recursion is between 3-4 time slower, so I use the
+//   iterative solution below. But I keep this here for reference.
+func nFlipsRecursive(s string) int {
+	// handle base case, single letter strings
+	if len(s) == 1 {
+		if s[0] == '-' {
+			return 1
+		} else {
+			return 0
+		}
+	}
+
+	for {
+		if s[0] != s[1] {
+			return nFlipsRecursive(s[1:]) + 1
+		}
+		return nFlipsRecursive(s[1:])
+	}
+}
+
 func nFlips(s string) int {
 	// handle base case, single letter strings
 	if len(s) == 1 {

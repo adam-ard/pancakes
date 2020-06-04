@@ -4,9 +4,9 @@ import "testing"
 
 func TestNFlips(t *testing.T) {
 	var tests = []struct {
-        s string
-        correct int
-    }{
+		s       string
+		correct int
+	}{
 		{"-", 1},
 		{"+", 0},
 		{"--", 1},
@@ -47,7 +47,7 @@ func TestNFlips(t *testing.T) {
 		{"+-+-+-+-+-+-", 12},
 		{"----------------+", 1},
 		{"----------------+-", 3},
-    }
+	}
 
 	for _, tt := range tests {
 		res := nFlips(tt.s)
@@ -55,4 +55,18 @@ func TestNFlips(t *testing.T) {
 			t.Errorf("nFlips(\"%s\") = %d; want %d", tt.s, res, tt.correct)
 		}
 	}
+}
+
+func BenchmarkNFlips(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		nFlips("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-")
+	}
+
+}
+
+func BenchmarkNFlipsRecursive(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		nFlipsRecursive("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-")
+	}
+
 }
