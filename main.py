@@ -13,26 +13,15 @@ def n_flips(s):
 
 def get_num_flips(s):
     if len(s) == 1:
-        if s[0] == '-':
-            return 1
-        else:
-            return 0
+        return 1 if s[0] == '-' else 0
 
     count = 0
-    i = 0
-    j = 1
-
-    while(True):
-        if s[i] != s[j]:
+    for i in range(len(s) - 1):
+        if s[i] != s[i+1]:
             count = count + 1
-            i = j
 
-        if j == len(s) - 1:
-            if s[j] == '-':
-                count = count + 1
-            break
-
-        j = j + 1
+    if s[-1] == '-':
+        count = count + 1
 
     return count
 
