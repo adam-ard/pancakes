@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"os"
 	"io/ioutil"
+	"os"
 	"strings"
 )
 
@@ -17,7 +17,7 @@ func nFlips(s string) int {
 	}
 
 	count := 0
-	for i := 0; i < len(s) - 1; i++ {
+	for i := 0; i < len(s)-1; i++ {
 		if s[i] != s[i+1] {
 			count++
 		}
@@ -29,7 +29,6 @@ func nFlips(s string) int {
 
 	return count
 }
-
 
 func main() {
 	// get filename from commandline
@@ -43,11 +42,12 @@ func main() {
 
 	// exclude the first line
 	tests := lines[1:]
-	
+
+	// iterate through all test cases
 	for i, test := range tests {
-		if (test != "") {
+		if test != "" {
 			fmt.Printf("Case #%d: %d\n", i+1, nFlips(test))
 		}
 	}
-	
+
 }
