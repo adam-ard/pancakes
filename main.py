@@ -3,7 +3,7 @@ import sys
 # NOTE: this can be done recursively but the
 #   call stack for long strings might overflow
 #   the spec says the  limit is 100, so it should be ok
-#       The iterative approace is also faster so I am
+#       The iterative approach is also faster, so I am
 #       using that one. I am leaving this here for refrence
 #       because it very clear
 def n_flips_recurse(s):
