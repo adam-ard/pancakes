@@ -33,11 +33,11 @@ def n_flips(s):
 
 def main():
     with open(sys.argv[1]) as f:
-        num_tests = f.readline()
+        f.readline()  # read the first line, but we don't use it
         tests = f.read()
 
     for i, test in enumerate(tests.split()):
-        print('Case #%s: %s %s' % (i+1, n_flips(test)))
+        print('Case #%s: %s' % (i+1, n_flips(test)))
 
 
 if __name__ == "__main__":
