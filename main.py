@@ -10,10 +10,9 @@ def n_flips_recurse(s):
     if len(s) == 1:
         return 1 if s[0] == '-' else 0
 
-    while(True):
-        if s[0] != s[1]:
-            return n_flips_recurse(s[1:]) + 1
-        return n_flips_recurse(s[1:])
+    if s[0] != s[1]:
+        return n_flips_recurse(s[1:]) + 1
+    return n_flips_recurse(s[1:])
 
 
 def n_flips(s):
