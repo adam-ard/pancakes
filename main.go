@@ -30,11 +30,6 @@ func nFlipsRecursive(s string) int {
 }
 
 func nFlips(s string) int {
-	// handle base case, single letter strings
-	if len(s) == 1 {
-		return base(s)
-	}
-
 	// count the flips
 	count := 0
 	for i := 0; i < len(s)-1; i++ {
